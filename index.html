@@ -74,7 +74,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>Beyond Multiple Choice: Verifiable OpenQA for Robust Vision-Language RFT</title>
+  <title>ReVeL</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -195,18 +195,18 @@
             <!-- TODO: Replace with your paper title -->
             <h1 class="title is-1 publication-title">Beyond Multiple Choice: Verifiable OpenQA for Robust Vision-Language RFT</h1>
             <div class="is-size-5 publication-authors">
-  <span class="author-block"><a href="#">Yesheng Liu</a><sup>1,2,3</sup></span>
-  <span class="author-block"><a href="#">Hao Li</a><sup>3,4</sup></span>
-  <span class="author-block"><a href="#">Haiyu Xu</a><sup>3,5</sup></span>
-  <span class="author-block"><a href="#">Baoqi Pei</a><sup>6</sup></span>
-  <span class="author-block"><a href="#">Jiahao Wang</a><sup>1,2,3</sup></span>
-  <span class="author-block"><a href="#">Mingxuan Zhao</a><sup>3,5</sup></span>
-  <span class="author-block"><a href="#">Jing-Shu Zheng</a><sup>3</sup></span>
-  <span class="author-block"><a href="#">Zheqi He</a><sup>3</sup></span>
-  <span class="author-block"><a href="#">JG Yao</a><sup>3</sup></span>
-  <span class="author-block"><a href="#">Bowen Qin</a><sup>3</sup></span>
-  <span class="author-block"><a href="#">Xi Yang</a><sup>3</sup></span>
-  <span class="author-block"><a href="#">Jiajun Zhang</a><sup>3</sup></span>
+  <span class="author-block">Yesheng Liu<sup>1,2,3</sup></span>
+  <span class="author-block">Hao Li<sup>3,4</sup></span>
+  <span class="author-block">Haiyu Xu<sup>3,5</sup></span>
+  <span class="author-block">Baoqi Pei<sup>6</sup></span>
+  <span class="author-block">Jiahao Wang<sup>1,2,3</sup></span>
+  <span class="author-block">Mingxuan Zhao<sup>3,5</sup></span>
+  <span class="author-block">Jing-Shu Zheng<sup>3</sup></span>
+  <span class="author-block">Zheqi He<sup>3</sup></span>
+  <span class="author-block">JG Yao<sup>3</sup></span>
+  <span class="author-block">Bowen Qin<sup>3</sup></span>
+  <span class="author-block">Xi Yang<sup>3</sup></span>
+  <span class="author-block">Jiajun Zhang<sup>3</sup></span>
 </div>
 
 <div class="is-size-6 has-text-centered mt-2">
@@ -225,7 +225,7 @@
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>abs</span>
+                  <span>Abs</span>
                 </a>
               </span>
                     
@@ -321,13 +321,14 @@ However, we find that the options may leak exploitable signals, which makes the 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Fragility of MCQA</h2>
-        <h3 class="subtitle is-4 has-text-left mt-5">1. Options can <em>create</em> knowledge</h3>
+        <h3 class="subtitle is-4 has-text-left mt-5">1. Quantifying the non-robustness of MCQA</h3>
         <div class="content has-text-justified is-medium">
-          <p>
-            Converting open-ended questions into MCQA results in significant accuracy gains. Models exploit cues and positional patterns, rather than retrieving or reasoing from actual knowledge. When options are removed or replaced by “None-of-the-Above”, performance collapses, and models often reason correctly but still choose the wrong option, exposing logical inconsistency.
+          <p>We find that evaluation via MCQA lacks robustness to trivial modifications of the options: 
           </p>
           <img src="static/images/Add_options.jpg" alt="add option results" style="max-height: 400px; display: block; margin-left: auto; margin-right: auto;" />
-          <p class="subtitle is-6 mt-3 has-text-centered">Performance comparison on original open-ended datasets (SimpleQA, Visual SimpleQA) and their multiple-choice versions (*-Choice, with 6 options). The Random Guess score is a theoretical upper bound that combines the model’s actual open-ended accuracy with the probability of correctly guessing on the rest of the questions from six options.</p>
+          <p class="subtitle is-6 mt-3 has-text-centered">Models exploit cues and positional patterns, rather than retrieving or reasoing from actual knowledge.</p>
+          <img src="static/images/benchmarks.jpg" alt="benchmarks results" style="max-height: 400px; display: block; margin-left: auto; margin-right: auto;" />
+          <p class="subtitle is-6 mt-3 has-text-centered">When options are removed or replaced by “None-of-the-Above”, performance collapses, and models often reason correctly but still choose the wrong option, exposing logical inconsistency.</p>
         </div>
 <h3 class="subtitle is-4 has-text-left mt-5">2. RFT on MCQA hurts open-ended QA</h3>
         <div class="content has-text-justified is-medium">
